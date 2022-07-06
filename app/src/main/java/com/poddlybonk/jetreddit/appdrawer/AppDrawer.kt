@@ -18,6 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.constraintlayout.compose.ConstraintLayout
 import com.poddlybonk.jetreddit.R
 import com.poddlybonk.jetreddit.ui.theme.JetRedditThemeSettings
 
@@ -81,7 +82,48 @@ private fun ProfileInfoItem(
     textResourceId: Int,
     modifier: Modifier
 ) {
-    // TODO: Add your code here.
+    val colors = MaterialTheme.colors
+    
+    ConstraintLayout(modifier = Modifier) {
+        val (iconRef, amountRef, titleRef) = createRefs()
+        val itemModifier = Modifier
+        
+        Icon(
+            contentDescription = stringResource(textResourceId),
+            imageVector = iconAsset,
+            tint = Color.Blue,
+            modifier = itemModifier
+                .constrainAs(iconRef) {
+                    centerVerticallyTo(parent)
+                    start.linkTo(parent.start)
+                }
+                .padding(start = 16.dp)
+        )
+        Text(
+            text = stringResource(amountResourceId),
+            color = colors.primaryVariant,
+            fontSize = 10.sp,
+            modifier = itemModifier
+                .padding(start = 8.dp)
+                .constrainAs(amountRef) {
+                    top.linkTo(iconRef.top)
+                    start.linkTo(iconRef.end)
+                    bottom.linkTo(titleRef.top)
+                }
+        )
+        Text(
+            text = stringResource(textResourceId),
+            color = Color.Gray,
+            fontSize = 10.sp,
+            modifier = itemModifier
+                .padding(start = 8.dp)
+                .constrainAs(titleRef) {
+                    top.linkTo(amountRef.bottom)
+                    start.linkTo(iconRef.end)
+                    bottom.linkTo(iconRef.bottom)
+                }
+        )
+    }
 }
 
 @Composable
