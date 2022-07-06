@@ -98,7 +98,7 @@ private fun ProfileInfo(modifier: Modifier = Modifier) {
                     centerHorizontallyTo(parent)
                     height = Dimension.fillToConstraints
                 },
-            color = colors.onSurface.copy(alpha = 0.2f)
+            color  = colors.onSurface.copy(alpha = 0.2f)
         )
         ProfileInfoItem(
             Icons.Filled.ShoppingCart,
@@ -165,7 +165,22 @@ private fun ProfileInfoItem(
 
 @Composable
 private fun AppDrawerBody(closeDrawerAction: () -> Unit) {
-    // TODO: Add your code here.
+    Column {
+        ScreenNavigationButton(
+            icon = Icons.Filled.AccountBox,
+            label = stringResource(R.string.my_profile),
+            onClickAction = {
+                closeDrawerAction()
+            }
+        )
+        ScreenNavigationButton(
+            icon = Icons.Filled.Home,
+            label = stringResource(R.string.saved),
+            onClickAction = {
+                closeDrawerAction()
+            }
+        )
+    }
 }
 
 @Composable
