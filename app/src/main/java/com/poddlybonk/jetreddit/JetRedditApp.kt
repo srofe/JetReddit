@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
+import com.poddlybonk.jetreddit.appdrawer.AppDrawer
 import com.poddlybonk.jetreddit.routing.JetRedditRouter
 import com.poddlybonk.jetreddit.routing.Screen
 import com.poddlybonk.jetreddit.screens.AddScreen
