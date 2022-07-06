@@ -14,6 +14,10 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import com.poddlybonk.jetreddit.routing.JetRedditRouter
 import com.poddlybonk.jetreddit.routing.Screen
+import com.poddlybonk.jetreddit.screens.AddScreen
+import com.poddlybonk.jetreddit.screens.HomeScreen
+import com.poddlybonk.jetreddit.screens.MyProfileScreen
+import com.poddlybonk.jetreddit.screens.SubredditsScreen
 import com.poddlybonk.jetreddit.ui.theme.JetRedditTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
